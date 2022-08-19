@@ -1,7 +1,7 @@
 import { RmqModule } from '@app/common/rmq/rmq.module';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import Joi from 'joi';
+import * as Joi from 'joi';
 import { BillingController } from './billing.controller';
 import { BillingService } from './billing.service';
 
