@@ -19,6 +19,19 @@ services:
     ports:
       - '3000:3000'
 
+  # auth:
+  #   build:
+  #     context: .
+  #     dockerfile: ./apps/auth/Dockerfile
+  #     target: development
+  #   command: yarn startv1:dev
+  #   env_file:
+  #     - ./apps/auth/.env
+  #   volumes:
+  #     - .:/usr/src/app
+  #     - /usr/src/app/node_modules
+  #   ports:
+  #     - '3002:3000'
   mongodb-primary:
     image: docker.io/bitnami/mongodb:5.0
     environment:
