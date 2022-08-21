@@ -1,5 +1,5 @@
-import { RmqService } from '@app/common';
-import { Controller, Get, Logger } from '@nestjs/common';
+import { JwtAuthGuard, RmqService } from '@app/common';
+import { Controller, Get, Logger, UseGuards } from '@nestjs/common';
 import { Ctx, EventPattern, Payload, RmqContext } from '@nestjs/microservices';
 import { BillingService } from './billing.service';
 
@@ -18,7 +18,9 @@ export class BillingController {
   }
 
   @EventPattern('order_created')
+  @UseGuards(JwtAuthGuard)
   async handleOrderCreated(@Payload() data: any, @Ctx() context: RmqContext) {
+    this.logger.log('cos tu weszlo ????????');
     this.billingService.bill(data);
     this.rmqService.ack(context);
   }
