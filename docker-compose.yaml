@@ -60,9 +60,12 @@ services:
       - '3001:3001'
 
   rabbitmq:
-    image: rabbitmq
+    image: 'rabbitmq:3-management'
     ports:
       - '5672:5672'
+      - '15672:15672'
+    volumes:
+      - 'rabbitmq_data:/data'
 
   mongodb-primary:
     image: docker.io/bitnami/mongodb:5.0
@@ -102,5 +105,6 @@ services:
       # - MONGODB_INITIAL_PRIMARY_PORT_NUMBER=28017
 
 volumes:
+  rabbitmq_data:
   mongodb_master_data:
     driver: local
