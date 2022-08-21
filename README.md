@@ -89,6 +89,15 @@ $ "start:dev": "WATCHPACK_POLLING=true nest start --watch",
 $ https://stackoverflow.com/a/72478714
 ```
 
+## RabbitMQ
+
+```bash
+# RabbitMQ GUI
+$ http://localhost:15672
+$ username: guest
+$ password guest
+```
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
