@@ -16,11 +16,11 @@ export class RmqModule {
         ClientsModule.registerAsync([
           {
             name,
-            useFactory: (configservice: ConfigService) => ({
+            useFactory: (configService: ConfigService) => ({
               transport: Transport.RMQ,
               options: {
-                urls: [configservice.get<string>('RABBIT_MQ_URI')],
-                queue: configservice.get<string>(`RABBIT_MQ_${name}_QUEUE`),
+                urls: [configService.get<string>('RABBIT_MQ_URI')],
+                queue: configService.get<string>(`RABBIT_MQ_${name}_QUEUE`),
               },
             }),
             inject: [ConfigService],
