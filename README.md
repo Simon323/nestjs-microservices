@@ -42,6 +42,19 @@ $ nest generate app your_app_name
 $ nest g library name_your_library
 ```
 
+## NestJS cli
+
+```bash
+# generate controller
+$ nest g controller users
+
+# generate module
+$ nest g module users
+
+# generate service
+$ nest g service users
+```
+
 ## Running the app
 
 ```bash
